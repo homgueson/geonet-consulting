@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GéoNet Consulting – Bureau d'Étude</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- BARRE DE NAVIGATION -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="images/GeoNet_Consulting_Banner.svg" alt="GéoNet Consulting" class="logo-img" />
+        <span class="logo-text">GéoNet <strong>Consulting</strong></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SECTION HÉRO -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Bureau d'Étude &amp; Conseil</h1>
+      <p class="hero-subtitle">Expertise en Cartographie/SIG, Développement Durable, Planification locale, Collecte de Données<br>et Renforcement de Capacités</p>
+      <div class="hero-buttons">
+        <a href="services.html" class="btn btn-primary">Nos Services</a>
+        <a href="contact.html" class="btn btn-outline">Nous Contacter</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION À PROPOS -->
+  <section class="section about">
+    <div class="container">
+      <div class="section-header">
+        <h2>Qui Sommes-Nous ?</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p><strong>GéoNet Consulting</strong> est un bureau d'étude spécialisé dans les domaines de la cartographie et des Systèmes d'Information Géographique (SIG), du Développement Durable, de la Planification Locale, des Etudes d'impacts environnemental et Social, de la collecte numérique de données et du renforcement de capacités.</p>
+          <p>Nous accompagnons nos clients — institutions, ONG, collectivités et organismes de formation — dans la conception, la mise en œuvre et l'évaluation de leurs projets et programmes.</p>
+          <a href="services.html" class="btn btn-primary" style="margin-top:1rem;">Découvrir nos services</a>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <i class="fas fa-map-marked-alt"></i>
+            <span class="stat-number">7</span>
+            <span class="stat-label">Domaines d'expertise</span>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-users"></i>
+            <span class="stat-number">+</span>
+            <span class="stat-label">Clients satisfaits</span>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-project-diagram"></i>
+            <span class="stat-number">+</span>
+            <span class="stat-label">Projets réalisés</span>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-graduation-cap"></i>
+            <span class="stat-number">+</span>
+            <span class="stat-label">Personnes formées</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION SERVICES RÉSUMÉ -->
+  <section class="section services-preview bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos Domaines d'Intervention</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Des solutions adaptées à vos besoins en études, formation et technologies géospatiales</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>Études et Conseils</h3>
+          <p>Accompagnement stratégique et technique pour vos projets de développement.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3>Formations</h3>
+          <p>Renforcement de capacités pour professionnels, étudiants et organisations.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-map"></i></div>
+          <h3>Cartographie, SIG &amp; Web Mapping</h3>
+          <p>Production cartographique, analyse spatiale, gestion de données géographiques et cartes interactives en ligne.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Évaluation de Projets</h3>
+          <p>Évaluation et suivi de projets et programmes selon les standards internationaux.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+          <h3>Planification locale</h3>
+          <p>Élaboration de documents de planification (PDL, PDC, PDP), schémas directeurs et documents stratégiques.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-database"></i></div>
+          <h3>Bases de Données</h3>
+          <p>Conception, structuration et gestion de bases de données thématiques.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Collecte Numérique</h3>
+          <p>Outils de collecte mobile (ODK, KoBoToolbox) et analyse statistique des données.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Étude d'Impact Environnemental et Social</h3>
+          <p>Évaluation des impacts environnementaux et sociaux de projets selon les normes nationales et internationales.</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="services.html" class="btn btn-primary">Voir tous nos services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION PUBLICS CIBLES -->
+  <section class="section targets">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos Publics Cibles</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="targets-grid">
+        <div class="target-item"><i class="fas fa-user-tie"></i><span>Professionnels</span></div>
+        <div class="target-item"><i class="fas fa-user"></i><span>Particuliers</span></div>
+        <div class="target-item"><i class="fas fa-user-graduate"></i><span>Élèves &amp; Étudiants</span></div>
+        <div class="target-item"><i class="fas fa-city"></i><span>Collectivités</span></div>
+        <div class="target-item"><i class="fas fa-hands-helping"></i><span>ONG</span></div>
+        <div class="target-item"><i class="fas fa-users-cog"></i><span>Associations</span></div>
+        <div class="target-item"><i class="fas fa-school"></i><span>Établissements Scolaires</span></div>
+        <div class="target-item"><i class="fas fa-university"></i><span>Universités</span></div>
+        <div class="target-item"><i class="fas fa-landmark"></i><span>Institutions Nationales &amp; Internationales</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPEL À L'ACTION -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Un projet ? Une formation ? Contactez-nous !</h2>
+      <p>Notre équipe est disponible pour étudier vos besoins et vous proposer des solutions adaptées.</p>
+      <a href="contact.html" class="btn btn-white">Prendre contact</a>
+    </div>
+  </section>
+
+  <!-- PIED DE PAGE -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/GeoNet_Consulting_Banner.svg" alt="GéoNet Consulting" class="logo-img" />
+        <span class="logo-text" style="color:white;">GéoNet <strong>Consulting</strong></span>
+        <p>Bureau d'Étude spécialisé en Cartographie, SIG et Renforcement de Capacités.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> geonetconsulting.td@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +235 65137175</p>
+        <p><i class="fas fa-map-marker-alt"></i> Quartier Ngonba-9ème Arrondissement, N'Djamena-Tchad</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 GéoNet Consulting. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

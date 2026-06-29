@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 110">
+  <defs>
+    <clipPath id="globe-clip">
+      <circle cx="58" cy="55" r="52"/>
+    </clipPath>
+    <radialGradient id="ocean-grad" cx="34%" cy="28%" r="72%">
+      <stop offset="0%"   stop-color="#1e88e5"/>
+      <stop offset="55%"  stop-color="#0d47a1"/>
+      <stop offset="100%" stop-color="#050f2c"/>
+    </radialGradient>
+    <radialGradient id="globe-shine" cx="30%" cy="25%" r="55%">
+      <stop offset="0%"   stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+    <filter id="pin-drop" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="rgba(0,0,0,0.55)"/>
+    </filter>
+    <filter id="globe-drop" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="rgba(0,0,0,0.35)"/>
+    </filter>
+  </defs>
+
+  <!-- ════════════ GLOBE ════════════ -->
+  <g filter="url(#globe-drop)">
+    <circle cx="58" cy="55" r="52" fill="url(#ocean-grad)"/>
+  </g>
+
+  <!-- Grille (méridiens + parallèles) -->
+  <g clip-path="url(#globe-clip)" fill="none">
+    <!-- Équateur & méridien central -->
+    <line x1="6"  y1="55" x2="110" y2="55" stroke="rgba(255,255,255,0.28)" stroke-width="0.8"/>
+    <line x1="58" y1="3"  x2="58"  y2="107" stroke="rgba(255,255,255,0.28)" stroke-width="0.8"/>
+    <!-- Parallèles secondaires -->
+    <line x1="6"  y1="42" x2="110" y2="42" stroke="rgba(255,255,255,0.13)" stroke-width="0.5"/>
+    <line x1="6"  y1="68" x2="110" y2="68" stroke="rgba(255,255,255,0.13)" stroke-width="0.5"/>
+    <line x1="6"  y1="29" x2="110" y2="29" stroke="rgba(255,255,255,0.08)" stroke-width="0.4"/>
+    <line x1="6"  y1="81" x2="110" y2="81" stroke="rgba(255,255,255,0.08)" stroke-width="0.4"/>
+    <!-- Méridiens secondaires -->
+    <line x1="42" y1="3" x2="42" y2="107" stroke="rgba(255,255,255,0.13)" stroke-width="0.5"/>
+    <line x1="74" y1="3" x2="74" y2="107" stroke="rgba(255,255,255,0.13)" stroke-width="0.5"/>
+    <line x1="26" y1="3" x2="26" y2="107" stroke="rgba(255,255,255,0.08)" stroke-width="0.4"/>
+    <line x1="90" y1="3" x2="90" y2="107" stroke="rgba(255,255,255,0.08)" stroke-width="0.4"/>
+  </g>
+
+  <!--
+    Projection équirectangulaire centrée sur (15°E, 0°N)
+    x = 58 + (lon − 15) × 1.30
+    y = 55 − lat × 1.30
+  -->
+
+  <!-- Europe du Sud -->
+  <path clip-path="url(#globe-clip)"
+    d="M31,10 L40,7 L51,7 L58,6 L67,7 L74,10 L70,16 L64,14 L51,10 L31,14 Z"
+    fill="#43a047" opacity="0.82"/>
+
+  <!-- Péninsule arabique -->
+  <path clip-path="url(#globe-clip)"
+    d="M84,29 L93,19 L103,25 L103,41 L95,41 L91,37 Z"
+    fill="#43a047" opacity="0.78"/>
+
+  <!-- Afrique -->
+  <path clip-path="url(#globe-clip)"
+    d="M31,14 L51,10 L70,16 L80,18 L85,29 L91,41
+       L101,41 L90,60 L88,69 L82,76 L62,100
+       L53,92 L53,76 L53,62 L42,51 L34,50
+       L16,39 L16,30 L21,21 Z"
+    fill="#43a047" opacity="0.90"/>
+
+  <!-- Tchad (ambre / orange) -->
+  <path clip-path="url(#globe-clip)"
+    d="M56,27 L68,27 L68,31 L68,39 L66,44 L58,46 L56,45 Z"
+    fill="#ffb300"/>
+
+  <!-- Halo doux sur le Tchad -->
+  <ellipse clip-path="url(#globe-clip)"
+    cx="62" cy="36" rx="9" ry="10"
+    fill="rgba(255,179,0,0.18)"/>
+
+  <!-- Marqueur de localisation — N'Djamena (15°E, 12°N → x≈58, y≈40) -->
+  <g filter="url(#pin-drop)">
+    <path d="M58,49 C53.5,45.5 50,41.5 50,38
+             C50,33.5 53.6,30 58,30
+             C62.4,30 66,33.5 66,38
+             C66,41.5 62.5,45.5 58,49 Z"
+      fill="#e53935"/>
+    <circle cx="58" cy="38" r="4.2" fill="white"/>
+    <circle cx="58" cy="38" r="1.8" fill="#e53935"/>
+  </g>
+
+  <!-- Reflet brillant (effet sphère) -->
+  <circle cx="58" cy="55" r="52" fill="url(#globe-shine)" clip-path="url(#globe-clip)"/>
+
+  <!-- Bordure globe -->
+  <circle cx="58" cy="55" r="52" fill="none" stroke="rgba(5,15,44,0.9)" stroke-width="2.5"/>
+  <circle cx="58" cy="55" r="52" fill="none" stroke="rgba(255,255,255,0.13)" stroke-width="1.2"/>
+
+  <!-- ════════════ SÉPARATEUR ════════════ -->
+  <line x1="120" y1="14" x2="120" y2="96"
+    stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <!-- ════════════ TYPOGRAPHIE ════════════ -->
+
+  <!-- Ligne 1 : GéoNet -->
+  <text font-family="Roboto, Arial, sans-serif" font-weight="800" font-size="36">
+    <tspan x="134" y="52" fill="white" letter-spacing="0.5">Géo</tspan><tspan fill="#64b5f6" letter-spacing="0.5">Net</tspan>
+  </text>
+
+  <!-- Barre accent (bleu vif) -->
+  <rect x="134" y="58" width="175" height="2.5" fill="#1e88e5" rx="1.2"/>
+
+  <!-- Ligne 2 : CONSULTING -->
+  <text x="136" y="76"
+    font-family="Roboto, Arial, sans-serif"
+    font-size="16" font-weight="400"
+    fill="rgba(255,255,255,0.82)"
+    letter-spacing="5.5">CONSULTING</text>
+
+  <!-- Ligne décorative fine -->
+  <line x1="134" y1="83" x2="309" y2="83" stroke="rgba(255,255,255,0.12)" stroke-width="0.6"/>
+
+  <!-- Ligne 3 : tagline -->
+  <text x="135" y="94"
+    font-family="Roboto, Arial, sans-serif"
+    font-size="8.5" font-weight="300"
+    fill="rgba(255,255,255,0.48)"
+    letter-spacing="1.8">BUREAU D'ÉTUDE &amp; CONSEIL · N'DJAMENA, TCHAD</text>
+
+  <!-- Petits points décoratifs à droite -->
+  <circle cx="380" cy="42" r="2.2" fill="rgba(100,181,246,0.4)"/>
+  <circle cx="392" cy="42" r="2.2" fill="rgba(100,181,246,0.25)"/>
+  <circle cx="404" cy="42" r="2.2" fill="rgba(100,181,246,0.12)"/>
+  <circle cx="380" cy="54" r="2.2" fill="rgba(100,181,246,0.25)"/>
+  <circle cx="392" cy="54" r="2.2" fill="rgba(100,181,246,0.4)"/>
+  <circle cx="404" cy="54" r="2.2" fill="rgba(100,181,246,0.25)"/>
+  <circle cx="380" cy="66" r="2.2" fill="rgba(100,181,246,0.12)"/>
+  <circle cx="392" cy="66" r="2.2" fill="rgba(100,181,246,0.25)"/>
+  <circle cx="404" cy="66" r="2.2" fill="rgba(100,181,246,0.4)"/>
+</svg>
