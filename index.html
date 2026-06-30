@@ -90,7 +90,7 @@
         <p class="section-desc">Des solutions adaptées à vos besoins en études, formation et technologies géospatiales</p>
       </div>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
           <h3>Études et Conseils</h3>
           <p>Accompagnement stratégique et technique pour vos projets de développement.</p>
@@ -100,32 +100,32 @@
           <h3>Formations</h3>
           <p>Renforcement de capacités pour professionnels, étudiants et organisations.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon"><i class="fas fa-map"></i></div>
           <h3>Cartographie, SIG &amp; Web Mapping</h3>
           <p>Production cartographique, analyse spatiale, gestion de données géographiques et cartes interactives en ligne.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
           <h3>Évaluation de Projets</h3>
           <p>Évaluation et suivi de projets et programmes selon les standards internationaux.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon"><i class="fas fa-file-alt"></i></div>
           <h3>Planification locale</h3>
           <p>Élaboration de documents de planification (PDL, PDC, PDP), schémas directeurs et documents stratégiques.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon"><i class="fas fa-database"></i></div>
           <h3>Bases de Données</h3>
           <p>Conception, structuration et gestion de bases de données thématiques.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
           <h3>Collecte Numérique</h3>
           <p>Outils de collecte mobile (ODK, KoBoToolbox) et analyse statistique des données.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card fade-in">
           <div class="service-icon"><i class="fas fa-leaf"></i></div>
           <h3>Étude d'Impact Environnemental et Social</h3>
           <p>Évaluation des impacts environnementaux et sociaux de projets selon les normes nationales et internationales.</p>
@@ -197,5 +197,43 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+  var compteurs = document.querySelectorAll('.stat-number');
+  compteurs.forEach(function(el) {
+    var cible = parseInt(el.textContent);
+    if (isNaN(cible)) return;
+    var actuel = 0;
+    var pas = Math.ceil(cible / 40);
+    var intervalle = setInterval(function() {
+      actuel += pas;
+      if (actuel >= cible) {
+        actuel = cible;
+        clearInterval(intervalle);
+      }
+      el.textContent = actuel;
+    }, 40);
+  });
+    var observateur = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    observateur.observe(el);
+  });
+  window.addEventListener('scroll', function() {
+    var navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+</script>
+
 </body>
 </html>
