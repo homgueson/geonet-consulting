@@ -40,7 +40,7 @@
     <div class="container">
 
       <!-- Service 1 -->
-      <div class="service-detail" id="etudes">
+      <div class="service-detail fade-in" id="etudes">
         <div class="service-detail-icon"><i class="fas fa-lightbulb"></i></div>
         <div class="service-detail-content">
           <h2>1. Études et Conseils</h2>
@@ -71,7 +71,7 @@
       </div>
 
       <!-- Service 3 -->
-      <div class="service-detail" id="sig">
+      <div class="service-detail fade-in" id="sig">
         <div class="service-detail-icon"><i class="fas fa-map"></i></div>
         <div class="service-detail-content">
           <h2>3. Cartographie, SIG et Web Mapping</h2>
@@ -105,7 +105,7 @@
       </div>
 
       <!-- Service 5 -->
-      <div class="service-detail" id="planification">
+      <div class="service-detail fade-in" id="planification">
         <div class="service-detail-icon"><i class="fas fa-file-alt"></i></div>
         <div class="service-detail-content">
           <h2>5. Élaboration de Documents de Planification</h2>
@@ -135,7 +135,7 @@
       </div>
 
       <!-- Service 7 -->
-      <div class="service-detail" id="collecte">
+      <div class="service-detail fade-in" id="collecte">
         <div class="service-detail-icon"><i class="fas fa-mobile-alt"></i></div>
         <div class="service-detail-content">
           <h2>7. Collecte Numérique et Analyse des Données</h2>
@@ -207,5 +207,27 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    window.addEventListener('scroll', function() {
+      var navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    var observateur = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      observateur.observe(el);
+    });
+  </script>
 </body>
 </html>
