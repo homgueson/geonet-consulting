@@ -45,7 +45,7 @@
 
       <div class="formations-grid">
 
-        <div class="formation-card">
+        <div class="formation-card fade-in">
           <div class="formation-header">
             <i class="fas fa-map"></i>
             <h3>SIG avec QGIS</h3>
@@ -62,7 +62,7 @@
           <a href="contact.html" class="btn btn-primary btn-sm">S'inscrire</a>
         </div>
 
-        <div class="formation-card">
+        <div class="formation-card fade-in">
           <div class="formation-header">
             <i class="fas fa-map-marked-alt"></i>
             <h3>SIG avec ArcGIS</h3>
@@ -79,7 +79,7 @@
           <a href="contact.html" class="btn btn-primary btn-sm">S'inscrire</a>
         </div>
 
-        <div class="formation-card">
+        <div class="formation-card fade-in">
           <div class="formation-header">
             <i class="fas fa-mobile-alt"></i>
             <h3>Collecte Numérique sur Terrain</h3>
@@ -96,24 +96,24 @@
           <a href="contact.html" class="btn btn-primary btn-sm">S'inscrire</a>
         </div>
 
-        <div class="formation-card">
+        <div class="formation-card fade-in">
           <div class="formation-header">
             <i class="fas fa-table"></i>
-            <h3>Analyse de Données avec Excel</h3>
+            <h3>Analyse et Traitement de Données</h3>
             <span class="badge">Tous niveaux</span>
           </div>
           <div class="formation-body">
-            <p>Traitement, analyse et visualisation de données avec Microsoft Excel et Power BI : tableaux croisés dynamiques, graphiques, formules avancées, Tableaux de Bord et Visualisation.</p>
+            <p>Maîtriser les principaux outils de collecte, traitement et analyse de données quantitatives et qualitatives : saisie, nettoyage, statistiques et visualisation.</p>
             <ul>
-              <li><i class="fas fa-clock"></i> Durée : 3 jours</li>
+              <li><i class="fas fa-clock"></i> Durée : 5 jours</li>
               <li><i class="fas fa-users"></i> Public : Tous publics</li>
-              <li><i class="fas fa-tools"></i> Outil : Microsoft Excel</li>
+              <li><i class="fas fa-tools"></i> Outils : Excel, Sphinx, SPSS, CSPro, Power BI</li>
             </ul>
           </div>
           <a href="contact.html" class="btn btn-primary btn-sm">S'inscrire</a>
         </div>
 
-        <div class="formation-card">
+        <div class="formation-card fade-in">
           <div class="formation-header">
             <i class="fas fa-code"></i>
             <h3>Python pour les Données &amp; SIG</h3>
@@ -130,7 +130,7 @@
           <a href="contact.html" class="btn btn-primary btn-sm">S'inscrire</a>
         </div>
 
-        <div class="formation-card">
+        <div class="formation-card fade-in">
           <div class="formation-header">
             <i class="fas fa-chart-pie"></i>
             <h3>Suivi-Évaluation de Projets</h3>
@@ -219,5 +219,28 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+  window.addEventListener('scroll', function() {
+    var navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  var observateur = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    observateur.observe(el);
+  });
+</script>
+
 </body>
 </html>
